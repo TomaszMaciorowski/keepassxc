@@ -1113,7 +1113,9 @@ void EditEntryWidget::setForms(Entry* entry, bool restore)
     m_mainUi->usernameComboBox->addItems(commonUsernames);
     m_mainUi->usernameComboBox->lineEdit()->setText(usernameToRestore);
 
-    m_mainUi->notesEdit->setPlainText(entry->notes());
+    // Notes are stored as Markdown. QTextEdit renders the Markdown while editing,
+    // and toMarkdown() below keeps the portable Markdown representation in the database.
+    m_mainUi->notesEdit->setMarkdown(entry->notes());
 
     m_advancedUi->attachmentsWidget->linkAttachments(m_attachments.data());
     m_entryAttributes->copyCustomKeysFrom(entry->attributes());
@@ -1348,7 +1350,7 @@ void EditEntryWidget::updateEntryData(Entry* entry) const
     uniqueTags.removeDuplicates();
     entry->setTags(uniqueTags.join(";"));
 
-    entry->setNotes(m_mainUi->notesEdit->toPlainText());
+    entry->setNotes(m_mainUi->notesEdit->toMarkdown());
 
     if (entry->excludeFromReports() != m_advancedUi->excludeReportsCheckBox->isChecked()) {
         entry->setExcludeFromReports(m_advancedUi->excludeReportsCheckBox->isChecked());

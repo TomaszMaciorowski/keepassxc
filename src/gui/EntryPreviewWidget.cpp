@@ -329,7 +329,7 @@ void EntryPreviewWidget::setGroupNotesVisible(bool state)
 void EntryPreviewWidget::setNotesVisible(QTextEdit* notesWidget, const QString& notes, bool state)
 {
     if (state) {
-        notesWidget->setPlainText(notes);
+        notesWidget->setMarkdown(notes);
         notesWidget->moveCursor(QTextCursor::Start);
         notesWidget->ensureCursorVisible();
     } else {
