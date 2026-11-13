@@ -10,6 +10,18 @@
 
 [KeePassXC](https://keepassxc.org) is a modern, secure, and open-source password manager that stores and manages your most sensitive information. You can run KeePassXC on Windows, macOS, and Linux systems. KeePassXC is for people with extremely high demands of secure personal data management. It saves many different types of information, such as usernames, passwords, URLs, attachments, and notes in an offline, encrypted file that can be stored in any location, including private and public cloud solutions. For easy identification and management, user-defined titles and icons can be specified for entries. In addition, entries are sorted into customizable groups. An integrated search function allows you to use advanced patterns to easily find any entry in your database. A customizable, fast, and easy-to-use password generator utility allows you to create passwords with any combination of characters or easy to remember passphrases.
 
+## KeePASX Fork
+
+KeePASX is a personal fork of KeePassXC focused on improving the way notes are handled.
+
+Compared with the original KeePassXC project, this fork currently adds:
+
+* Markdown support for entry notes and group notes
+* Markdown rendering when notes are displayed in the preview
+* Rich-text editing fields for notes, with the portable Markdown representation preserved in the database
+
+The fork was created so that notes can contain readable formatting while remaining stored in a portable, text-based format that can be reused across KeePassXC-compatible workflows.
+
 ## Quick Start
 
 The [QuickStart Guide](https://keepassxc.org/docs/KeePassXC_GettingStarted.html) gets you started using KeePassXC on your Windows, macOS, or Linux computer using pre-compiled binaries from the [downloads page](https://keepassxc.org/download). Additionally, individual Linux distributions may ship their own versions, so please check your distribution's package list to see if KeePassXC is available. Detailed documentation is available in the [User Guide](https://keepassxc.org/docs/KeePassXC_UserGuide.html).
